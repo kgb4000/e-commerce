@@ -35,7 +35,7 @@ export interface Page {
   title: string
   publishedOn?: string
   hero: {
-    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact'
+    type: 'none' | 'highImpact' | 'mediumImpact' | 'lowImpact' | 'customHero'
     richText: {
       [k: string]: unknown
     }[]
@@ -171,7 +171,8 @@ export interface Media {
 }
 export interface Category {
   id: string
-  title?: string
+  title: string
+  media?: string | Media | null
   parent?: string | Category
   breadcrumbs?: {
     doc?: string | Category
